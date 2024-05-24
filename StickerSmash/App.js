@@ -7,11 +7,17 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 function HomeScreen() {
   return (
-    <SafeAreaView style = {styles.container}>
-        <Image source={require('./images/logo.png')} style = {styles.image}/>
-        <Text style={styles.paragraph}>
-          Bem-vindo ao Aplicativo da Escola Interstelar!
-        </Text> 
+    <SafeAreaView style={styles.container}>
+      <Image source={require("./images/logo.png")} style={styles.image} />
+      <Text style={styles.paragraph}>
+        Bem-vindo ao Aplicativo da Escola Interstelar!
+      </Text>
+      <Text style={styles.message}>
+        Aqui, você encontrará informações sobre{" "}
+        <Text style={{ fontWeight: "bold" }}>livros</Text> e{" "}
+        <Text style={{ fontWeight: "bold" }}>documentos</Text>, bem como seus
+        respectivos <Text style={{ fontWeight: "bold" }}>audiobooks.</Text>
+      </Text>
     </SafeAreaView>
   );
 }
@@ -60,6 +66,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
+  },
+  message: {
+    margin: 24,
+    fontSize: 12,
+    textAlign: 'center',
+    bottom: -50
   },
   image: {
     width: 150,
