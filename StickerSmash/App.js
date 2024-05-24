@@ -7,9 +7,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 function HomeScreen() {
   return (
-    <Text style={styles.paragraph}>
-      Bem-vindo ao Aplicativo da Escola Interstelar!
-    </Text> 
+    <SafeAreaView style = {styles.container}>
+        <Image source={require('./images/logo.png')} style = {styles.image}/>
+        <Text style={styles.paragraph}>
+          Bem-vindo ao Aplicativo da Escola Interstelar!
+        </Text> 
+    </SafeAreaView>
   );
 }
 
@@ -61,5 +64,7 @@ const styles = StyleSheet.create({
   image: {
     width: 150,
     height: 150,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
