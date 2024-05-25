@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Text,
   StatusBar,
+  TouchableOpacity
 } from 'react-native';
 
 const DATA = [
@@ -22,82 +23,133 @@ const DATA = [
     title: 'Ano',
   },
   {
-    id: 'titulo',
-    title: 'Livro',
+    id: 'titulo 1',
+    title: 'A hora da Estrela',
   },
   {
     id: 'categoria 1',
-    title: 'Programação 1',
+    title: 'Romance',
   },
   {
-    id: 'ano',
-    title: 'Livro',
+    id: 'ano 1',
+    title: '1977',
   },
   {
-    id: 'titulo',
-    title: 'Programação 2',
+    id: 'titulo 2',
+    title: 'Dom Casmurro',
+  },
+  {
+    id: 'categoria 2',
+    title: 'Romance',
+  },
+  {
+    id: 'ano 2',
+    title: '1899',
   },
   {
     id: 'titulo 3',
-    title: 'Livro',
+    title: 'Macunaíma',
   },
   {
-    id: 'ano',
-    title: 'Programação 3',
+    id: 'categoria 3',
+    title: 'Romance',
   },
   {
-    id: 'titulo',
-    title: 'Livro',
+    id: 'ano 3',
+    title: '1928',
+  },
+  {
+    id: 'titulo 4',
+    title: 'Menino de engenho',
   },
   {
     id: 'categoria 4',
-    title: 'Arq. computadores 2',
+    title: 'Ficção',
   },
   {
-    id: 'ano',
-    title: 'Livro',
+    id: 'ano 4',
+    title: '1932',
   },
   {
-    id: 'titulo',
-    title: 'Linguagens Formais',
+    id: 'titulo 5',
+    title: 'O Cortiço',
+  },
+  {
+    id: 'categoria 5',
+    title: 'Romance',
+  },
+  {
+    id: 'ano 5',
+    title: '1890',
   },
   {
     id: 'titulo 6',
-    title: 'Livro',
+    title: 'Os Sertões',
   },
   {
-    id: 'ano',
-    title: 'Banco de Dados 1',
+    id: 'categoria 6',
+    title: 'romance-reportagem',
   },
   {
-    id: 'titulo',
-    title: 'Livro',
+    id: 'ano 6',
+    title: '1902',
   },
   {
     id: 'titulo 7',
-    title: 'Livro',
+    title: 'Senhora',
   },
   {
-    id: 'ano',
-    title: '3131',
+    id: 'categoria 7',
+    title: 'Romance',
+  },
+  {
+    id: 'ano 7',
+    title: '1874',
+  },
+  {
+    id: 'titulo 8',
+    title: 'O Cão Sem Plumas',
+  },
+  {
+    id: 'categoria 8',
+    title: 'Poema',
+  },
+  {
+    id: 'ano 8',
+    title: '1950',
   },
 ];
+
+const Item = ({title, onPress, itemstyle}) =>(
+  <TouchableOpacity onPress={onPress} style = {itemstyle}>
+    <Text style = {itemstyle}>{title}</Text>
+  </TouchableOpacity>
+);
 
 const Separator = () => (
   <View style={styles.separator} />
 );
 
+
+const onPressRow = (title) => {
+  console.log('Item clicado:', title); 
+}
+
 const renderItem = ({ item }) => {
   // Define o estilo condicionalmente
   const textStyle = item.id === 'head' ? styles.header : styles.title;
   // const anoStyle = item.id === 'ano' ? styles.contain : styles.title;
-
+  
   return (
     <View style={styles.item}>
-      <Text style={textStyle}>{item.title}</Text>
+        <Item title={item.title} onPress={() => onPressRow(item.title)} itemstyle={textStyle}/>
     </View>
   );
 };
+
+
+
+
 
 const App = () => {
   return (
@@ -125,16 +177,17 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     marginBottom: 2,
     padding: 8,
-    height: 40,
+    height: 50,
     flexGrow: 1,
     flexBasis: 0,
     justifyContent: 'center',
-    textAlign: 'center'
+    textAlign: 'center',
+    alignItems: 'center', //centralizar o texto
+    flexWrap: 'wrap', //  o texto quebre em várias linhas
   },
 
   header: {
     color: '#999',
-    marginHorizontal: 15,
     marginBottom: 2,
     fontSize: 14,
     height: 40,
