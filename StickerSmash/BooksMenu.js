@@ -14,8 +14,12 @@ const DATA = [
     title: 'Title',
   },
   {
-    id: 'categoria',
-    title: 'Categoria',
+    id: 'genero',
+    title: 'Gênero',
+  },
+  {
+    id: 'ano',
+    title: 'Ano',
   },
   {
     id: 'titulo 1',
@@ -90,7 +94,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        numColumns= {2}
+        numColumns= {3}
         ItemSeparatorComponent = {Separator}
         data={DATA}
         renderItem={({item}) => <Item title={item.title} />}
