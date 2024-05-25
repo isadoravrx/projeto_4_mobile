@@ -10,19 +10,19 @@ import {
 
 const DATA = [
   {
-    id: 'titulo',
+    id: 'head',
     title: 'Title',
   },
   {
-    id: 'genero',
+    id: 'head',
     title: 'Gênero',
   },
   {
-    id: 'ano',
+    id: 'head',
     title: 'Ano',
   },
   {
-    id: 'titulo 1',
+    id: 'titulo',
     title: 'Livro',
   },
   {
@@ -30,11 +30,11 @@ const DATA = [
     title: 'Programação 1',
   },
   {
-    id: 'titulo 2',
+    id: 'ano',
     title: 'Livro',
   },
   {
-    id: 'categoria 2',
+    id: 'titulo',
     title: 'Programação 2',
   },
   {
@@ -42,11 +42,11 @@ const DATA = [
     title: 'Livro',
   },
   {
-    id: 'categoria 3',
+    id: 'ano',
     title: 'Programação 3',
   },
   {
-    id: 'titulo 4',
+    id: 'titulo',
     title: 'Livro',
   },
   {
@@ -54,11 +54,11 @@ const DATA = [
     title: 'Arq. computadores 2',
   },
   {
-    id: 'titulo 5',
+    id: 'ano',
     title: 'Livro',
   },
   {
-    id: 'categoria 5',
+    id: 'titulo',
     title: 'Linguagens Formais',
   },
   {
@@ -66,29 +66,38 @@ const DATA = [
     title: 'Livro',
   },
   {
-    id: 'categoria 6',
+    id: 'ano',
     title: 'Banco de Dados 1',
+  },
+  {
+    id: 'titulo',
+    title: 'Livro',
   },
   {
     id: 'titulo 7',
     title: 'Livro',
   },
   {
-    id: 'titulo 7',
-    title: 'não sei oq não sei que la',
+    id: 'ano',
+    title: '3131',
   },
 ];
-
-const Item = ({title}) => (
-  <View style={styles.item}>
-    <Text style={styles.title}>{title}</Text>
-  </View>
-);
 
 const Separator = () => (
   <View style={styles.separator} />
 );
 
+const renderItem = ({ item }) => {
+  // Define o estilo condicionalmente
+  const textStyle = item.id === 'head' ? styles.header : styles.title;
+  // const anoStyle = item.id === 'ano' ? styles.contain : styles.title;
+
+  return (
+    <View style={styles.item}>
+      <Text style={textStyle}>{item.title}</Text>
+    </View>
+  );
+};
 
 const App = () => {
   return (
@@ -97,7 +106,7 @@ const App = () => {
         numColumns= {3}
         ItemSeparatorComponent = {Separator}
         data={DATA}
-        renderItem={({item}) => <Item title={item.title} />}
+        renderItem={renderItem}
         keyExtractor={item => item.id}
       />
     </SafeAreaView>
@@ -105,6 +114,7 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     marginTop: StatusBar.currentHeight || 0,
@@ -114,12 +124,25 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     marginHorizontal: 15,
     marginBottom: 2,
-    padding: 10,
+    padding: 8,
+    height: 40,
+    flexGrow: 1,
+    flexBasis: 0,
+    justifyContent: 'center',
+    textAlign: 'center'
+  },
+
+  header: {
+    color: '#999',
+    marginHorizontal: 15,
+    marginBottom: 2,
+    fontSize: 14,
     height: 40,
     flexGrow: 1,
     flexBasis: 0,
     justifyContent: 'center'
   },
+
   title: {
     fontSize: 12,
   },
