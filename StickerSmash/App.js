@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import DocumentationMenu from './DocumentationMenu';
 import BooksMenu from './BooksMenu';
+import { useNavigation } from '@react-navigation/native';
 
 function HomeScreen() {
   return (
@@ -30,7 +31,7 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator>
           <Tab.Screen name="Home" component={HomeScreen} />
-          <Tab.Screen name='Livros' component={BooksMenu} />
+          <Tab.Screen name= "Livros" component={BooksMenu} />
           <Tab.Screen name="Documentação" component={DocumentationMenu} />
       </Tab.Navigator>
     </NavigationContainer>

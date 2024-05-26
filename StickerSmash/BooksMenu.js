@@ -1,4 +1,5 @@
-import React from 'react';
+import 'react-native-gesture-handler';
+import React, { Component } from 'react';
 import {
   SafeAreaView,
   View,
@@ -8,6 +9,8 @@ import {
   StatusBar,
   TouchableOpacity,
 } from 'react-native';
+
+import livros from './livros';
 
 const DATA = [
   {
@@ -27,17 +30,17 @@ const DATA = [
   },
   {
     id: 'titulo',
-    id2 : 'A hora da estrela',
+    id2 : 'A_hora_da_estrela',
     title: 'A hora da Estrela',
   },
   {
     id: 'categoria',
-    id2 : 'A hora da estrela',
+    id2 : 'A_hora_da_estrela',
     title: 'Romance',
   },
   {
     id: 'ano',
-    id2 : 'A hora da estrela',
+    id2 : 'A_hora_da_estrela',
     title: '1977',
   },
   {
@@ -159,7 +162,7 @@ const Separator = () => (
 
 
 const onPressRow = (id2) => {
-  console.log('Item clicado:', id2); 
+    console.log({id2});
 }
 
 const renderItem = ({ item }) => {

@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+
 const DATA = [
   {
     id: 'head',
