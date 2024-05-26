@@ -6,7 +6,7 @@ import {
   StyleSheet,
   Text,
   StatusBar,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 const DATA = [
@@ -187,7 +187,7 @@ const App = () => {
         ItemSeparatorComponent = {Separator}
         data={DATA}
         renderItem={renderItem}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item.id2}
       />
     </SafeAreaView>
   );
