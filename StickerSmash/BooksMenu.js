@@ -26,60 +26,60 @@ const DATA = [
     title: 'Livro',
   },
   {
-    id: 'categoria 1',
+    id: 'genero',
     title: 'Programação 1',
   },
   {
     id: 'ano',
-    title: 'Livro',
+    title: '1999',
   },
   {
     id: 'titulo',
     title: 'Programação 2',
   },
   {
-    id: 'titulo 3',
+    id: 'genero',
     title: 'Livro',
   },
   {
     id: 'ano',
-    title: 'Programação 3',
+    title: '1999',
   },
   {
     id: 'titulo',
     title: 'Livro',
   },
   {
-    id: 'categoria 4',
-    title: 'Arq. computadores 2',
+    id: 'genero',
+    title: 'Terror',
   },
   {
     id: 'ano',
-    title: 'Livro',
+    title: '1999',
   },
   {
     id: 'titulo',
     title: 'Linguagens Formais',
   },
   {
-    id: 'titulo 6',
-    title: 'Livro',
+    id: 'genero',
+    title: 'Ficção',
   },
   {
     id: 'ano',
-    title: 'Banco de Dados 1',
+    title: '1999',
   },
   {
     id: 'titulo',
     title: 'Livro',
   },
   {
-    id: 'titulo 7',
-    title: 'Livro',
+    id: 'genero',
+    title: 'Romance',
   },
   {
     id: 'ano',
-    title: '3131',
+    title: '1999',
   },
 ];
 
@@ -89,7 +89,11 @@ const Separator = () => (
 
 const renderItem = ({ item }) => {
   // Define o estilo condicionalmente
-  const textStyle = item.id === 'head' ? styles.header : styles.title;
+  const textStyle = 
+  item.id === 'head' ? styles.header :
+  item.id === 'ano'? styles.ano:
+  item.id === 'genero'? styles.genero:
+   styles.title;
   // const anoStyle = item.id === 'ano' ? styles.contain : styles.title;
 
   return (
@@ -121,15 +125,38 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   },
   item: {
-    backgroundColor: '#fff',
-    marginHorizontal: 15,
+    marginLeft: 15,
     marginBottom: 2,
     padding: 8,
     height: 40,
     flexGrow: 1,
     flexBasis: 0,
+    justifyContent: 'center'
+  },
+
+  genero: {
+    borderWidth: 1,
+    borderRadius: 4,
+    borderColor: '#ccc',
+    fontSize: 12,
+    paddingTop: 3.5,
+    flexGrow: 1,
+    textAlign: 'center',
     justifyContent: 'center',
-    textAlign: 'center'
+    flexBasis: 0
+  },
+
+  ano: {
+    width: 50,
+    borderWidth: 1,
+    borderRadius: 4,
+    borderColor: '#ccc',
+    fontSize: 12,
+    paddingTop: 3.5,
+    flexGrow: 1,
+    textAlign: 'center',
+    marginLeft: 10,
+    flexBasis: 0
   },
 
   header: {
@@ -137,6 +164,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     marginBottom: 2,
     fontSize: 14,
+    padding: 4,
     height: 40,
     flexGrow: 1,
     flexBasis: 0,

@@ -10,11 +10,11 @@ import {
 
 const DATA = [
   {
-    id: 'titulo',
-    title: 'Title',
+    id: 'head',
+    title: 'Tema',
   },
   {
-    id: 'categoria',
+    id: 'head',
     title: 'Categoria',
   },
   {
@@ -22,7 +22,7 @@ const DATA = [
     title: 'Hello World!',
   },
   {
-    id: 'categoria 1',
+    id: 'categoria',
     title: 'Programação 1',
   },
   {
@@ -30,7 +30,7 @@ const DATA = [
     title: 'Conceitos POO',
   },
   {
-    id: 'categoria 2',
+    id: 'categoria',
     title: 'Programação 2',
   },
   {
@@ -38,7 +38,7 @@ const DATA = [
     title: 'ArrayList',
   },
   {
-    id: 'categoria 3',
+    id: 'categoria',
     title: 'Programação 3',
   },
   {
@@ -46,7 +46,7 @@ const DATA = [
     title: 'Arquitetura em Nuvem',
   },
   {
-    id: 'categoria 4',
+    id: 'categoria',
     title: 'Arq. computadores 2',
   },
   {
@@ -54,7 +54,7 @@ const DATA = [
     title: 'Autômatos finitos',
   },
   {
-    id: 'categoria 5',
+    id: 'categoria',
     title: 'Linguagens Formais',
   },
   {
@@ -62,7 +62,7 @@ const DATA = [
     title: 'Modelos Conceituais',
   },
   {
-    id: 'categoria 6',
+    id: 'categoria',
     title: 'Banco de Dados 1',
   },
   {
@@ -70,7 +70,7 @@ const DATA = [
     title: 'Busca em rofundidade',
   },
   {
-    id: 'categoria 7',
+    id: 'categoria',
     title: 'Grafos',
   },
 ];
@@ -80,6 +80,21 @@ const Item = ({title}) => (
     <Text style={styles.title}>{title}</Text>
   </View>
 );
+
+const renderItem = ({ item }) => {
+  // Define o estilo condicionalmente
+  const textStyle = 
+  item.id === 'head' ? styles.header :
+  item.id === 'categoria' ? styles.categoria:
+  styles.title;
+  // const anoStyle = item.id === 'ano' ? styles.contain : styles.title;
+
+  return (
+    <View style={styles.item}>
+      <Text style={textStyle}>{item.title}</Text>
+    </View>
+  );
+};
 
 const Separator = () => (
   <View style={styles.separator} />
@@ -93,7 +108,7 @@ const App = () => {
         numColumns= {2}
         ItemSeparatorComponent = {Separator}
         data={DATA}
-        renderItem={({item}) => <Item title={item.title} />}
+        renderItem={renderItem}
         keyExtractor={item => item.id}
       />
     </SafeAreaView>
@@ -118,6 +133,26 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 12,
+  },
+  header: {
+    color: '#999',
+    marginHorizontal: 15,
+    marginBottom: 2,
+    fontSize: 14,
+    padding: 2,
+    height: 40,
+    flexGrow: 1,
+    flexBasis: 0
+  },
+  categoria: {
+    borderWidth: 1,
+    borderRadius: 4,
+    borderColor: '#ccc',
+    fontSize: 12,
+    paddingTop: 3.5,
+    flexGrow: 1,
+    textAlign: 'center',
+    flexBasis: 0
   },
   separator: {
     height: 1,
