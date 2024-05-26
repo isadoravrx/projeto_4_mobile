@@ -158,8 +158,8 @@ const Separator = () => (
 );
 
 
-const onPressRow = (title) => {
-  console.log('Item clicado:', title); 
+const onPressRow = (id2) => {
+  console.log('Item clicado:', id2); 
 }
 
 const renderItem = ({ item }) => {
@@ -173,7 +173,7 @@ const renderItem = ({ item }) => {
   
   return (
     <View style={styles.item}>
-        <Item title={item.title} onPress={() => onPressRow(item.title)} itemstyle={textStyle}/>
+        <Item title={item.title} onPress={() => onPressRow(item.id2)} itemstyle={textStyle}/>
     </View>
   );
 };
