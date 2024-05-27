@@ -52,13 +52,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   image: {
-    width: 250,
-    height: 350,
-    marginBottom: 16,
+    width: 350,
+    height: 200,
+    resizeMode: 'contain',
+    marginTop: 50,
+    marginBottom: 50,
   },
   descricao: {
     fontSize : 15,
-    marginBottom: 8,
+    marginBottom: 50,
   },
   autorstyle: {
     fontWeight: 'bold',
