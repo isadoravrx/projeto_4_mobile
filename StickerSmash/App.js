@@ -30,9 +30,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-          <Tab.Screen name="Home" component={HomeScreen} />
-          <Tab.Screen name= "Livros" component={BooksMenu} />
-          <Tab.Screen name="Documentação" component={DocumentationMenu} />
+          <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+          <Tab.Screen name= "Livros" component={BooksMenu } options={{ headerShown: false }} />
+          <Tab.Screen name="Documentação" component={DocumentationMenu} options={{ headerShown: false }} />
       </Tab.Navigator>
     </NavigationContainer>
   );

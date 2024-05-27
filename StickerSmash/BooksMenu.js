@@ -79,8 +79,8 @@ const Stack = createStackNavigator();
 
 const BooksMenu = () => (
   <Stack.Navigator>
-    <Stack.Screen name="BooksList" component={BooksList} options={{ headerShown: false }}  />
-    <Stack.Screen name="Livro" component={Livro} options={{ headerShown: false }}  />
+    <Stack.Screen name="BooksList" component={BooksList} options={{ title : 'Livros' }}  />
+    <Stack.Screen name="Livro" component={Livro} options={{ title : 'Detalhes do Livro' }}  />
   </Stack.Navigator>
 );
 
