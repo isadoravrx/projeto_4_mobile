@@ -25,12 +25,12 @@ const DATA = [
   },
   {
     id: 'tema',
-    id2: 'Conceitos POO',
+    id2: 'Conceitos_POO',
     title: 'Conceitos POO',
   },
   {
     id: 'categoria',
-    id2: 'Conceitos POO',
+    id2: 'Conceitos_POO',
     title: 'Programação 2',
   },
   {
@@ -45,42 +45,42 @@ const DATA = [
   },
   {
     id: 'tema',
-    id2: 'Arquitetura em Nuvem',
+    id2: 'Arquitetura_em_Nuvem',
     title: 'Arquitetura em Nuvem',
   },
   {
     id: 'categoria',
-    id2: 'Arquitetura em Nuvem',
+    id2: 'Arquitetura_em_Nuvem',
     title: 'Arq. computadores 2',
   },
   {
     id: 'tema',
-    id2: 'Autômatos finitos',
+    id2: 'Autômatos_finitos',
     title: 'Autômatos finitos',
   },
   {
     id: 'categoria',
-    id2: 'Autômatos finitos',
+    id2: 'Autômatos_finitos',
     title: 'Linguagens Formais',
   },
   {
     id: 'tema',
-    id2: 'Modelos Conceituais',
+    id2: 'Modelos_Conceituais',
     title: 'Modelos Conceituais',
   },
   {
     id: 'categoria',
-    id2: 'Modelos Conceituais',
+    id2: 'Modelos_Conceituais',
     title: 'Banco de Dados 1',
   },
   {
     id: 'tema',
-    id2: 'Busca em profundidade',
+    id2: 'Busca_em_profundidade',
     title: 'Busca em profundidade',
   },
   {
     id: 'categoria',
-    id2: 'Busca em profundidade',
+    id2: 'Busca_em_profundidade',
     title: 'Grafos',
   },
 ];
