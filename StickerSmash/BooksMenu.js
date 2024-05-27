@@ -123,20 +123,20 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     alignItems: 'center',
     justifyContent: 'center',
-    flexBasis: 0,
+    flexBasis: 0
   },
+  
   header: {
     marginBottom: 2,
-    fontSize: 14,
     padding: 4,
     height: 40,
     flexGrow: 1,
     flexBasis: 0,
+    backgroundColor: '#eee',
     justifyContent: 'center'
   },
   title: {
     fontSize: 12,
-
   },
   separator: {
     height: 1,

@@ -107,7 +107,7 @@ const renderItem = ({ item, navigation }) => {
   const textStyle = 
   item.id === 'tema' ? styles.header :
   item.id === 'categoria' ? styles.categoria:
-  styles.title;
+  styles.ano;
   // const anoStyle = item.id === 'ano' ? styles.contain : styles.title;
 
   return (
@@ -168,16 +168,16 @@ const styles = StyleSheet.create({
     flexBasis: 0
   },
   ano: {
-    width: 50,
+    marginBottom: 2,
     borderWidth: 1,
+    borderColor: '#fff',
     borderRadius: 4,
-    borderColor: '#ccc',
-    fontSize: 12,
+    padding: 4,
+    height: 40,
     flexGrow: 1,
-    textAlign: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexBasis: 0
+    flexBasis: 0,
+    backgroundColor: '#efefef',
+    justifyContent: 'center'
   },
   header: {
     marginBottom: 2,
