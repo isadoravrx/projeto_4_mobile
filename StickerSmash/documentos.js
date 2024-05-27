@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, Text, StyleSheet, Image, TouchableOpacity, Linking } from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet, Image, TouchableOpacity, Linking, ScrollView } from 'react-native';
 
 const Documento = ({ route, navigation }) => {
   const { id2 } = route.params;
@@ -58,13 +58,15 @@ const Documento = ({ route, navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Image source={documento.image} style={styles.image} />
-      <Text style={styles.descricao}>{documento.descricao}</Text>
-      <TouchableOpacity style={styles.button} onPress={openLink}>
-        <Text style={styles.buttonText}>Referência</Text>
-      </TouchableOpacity>
-    </View>
+    <ScrollView>  
+      <View style={styles.container}>
+        <Image source={documento.image} style={styles.image} />
+        <Text style={styles.descricao}>{documento.descricao}</Text>
+        <TouchableOpacity style={styles.button} onPress={openLink}>
+          <Text style={styles.buttonText}>Referência</Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
   );
 };
 
