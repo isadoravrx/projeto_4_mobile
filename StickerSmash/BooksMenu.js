@@ -44,7 +44,9 @@ const Separator = () => (
 );
 
 const onPressRow = (id2, navigation) => {
-  navigation.navigate('Livro', { id2 });
+  if(id2 !== 'head'){
+    navigation.navigate('Livro', { id2 });
+  }
 };
 
 const renderItem = ({ item, navigation }) => {

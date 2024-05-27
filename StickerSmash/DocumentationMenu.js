@@ -97,7 +97,9 @@ const Separator = () => (
 );
 
 const onPressRow = (id2, navigation) => {
-  navigation.navigate('Documento', { id2 });
+  if(id2 !== 'head'){ 
+    navigation.navigate('Documento', { id2 });
+  }
 };
 
 const renderItem = ({ item, navigation }) => {
