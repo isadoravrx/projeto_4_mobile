@@ -2,6 +2,7 @@ import React from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Livro from './livros';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const DATA = [
   { id: 'head', id2: 'head', title: 'Título' },
@@ -105,9 +106,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 4,
     borderColor: '#ccc',
+    minHeight: 50,
     fontSize: 12,
     flexGrow: 1,
-    textAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center',
     flexBasis: 0
@@ -122,7 +123,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     alignItems: 'center',
     justifyContent: 'center',
-    flexBasis: 0
+    flexBasis: 0,
   },
   header: {
     marginBottom: 2,
@@ -131,11 +132,11 @@ const styles = StyleSheet.create({
     height: 40,
     flexGrow: 1,
     flexBasis: 0,
-    color: '#999',
     justifyContent: 'center'
   },
   title: {
-    fontSize: 12
+    fontSize: 12,
+
   },
   separator: {
     height: 1,

@@ -32,7 +32,7 @@ const Livro = ({ route, navigation }) => {
     'Menino_de_engenho': {
       title: 'Menino de Engenho',
       image: require('./images/livros/menino_de_engenho.webp'),
-      descricao: 'Primeiro romance de de José Lins do Rego, Menino de engenho é narrativa cativante composta pelas aventuras e desventuras da meninice de Carlos. A trama revela a grandeza literária de seu autor, que compõe, com minúcia e de forma magistral, as alegrias, inquietações e angústias do menino diante de sensações e situações por ele vivenciadas pela primeira vez. Publicado pela primeira vez em 1932, o livro comprova, sem sombra de dúvidas, o talento monumental de um escritor, cuja obra nortearia os rumos do moderno regionalismo brasileiro.A edição ora publicada pela Global marca o ingresso do autor em sua nova casa editorial. O projeto gráfico de capa e a ilustração são de Mauricio Negro. O livro traz um texto de apresentação do Prof. João Cezar de Castro Rocha, professor titular de Literatura Comparada da UERJ, especialmente encomendado para esta edição.',
+      descricao: 'Primeiro romance de de José Lins do Rego, Menino de engenho é narrativa cativante composta pelas aventuras e desventuras da meninice de Carlos. A trama revela a grandeza literária de seu autor, que compõe, com minúcia e de forma magistral, as alegrias, inquietações e angústias do menino diante de sensações e situações por ele vivenciadas pela primeira vez.',
       autor: 'José Lins do Rego',
       preco: '65,00',
       link: 'https://proj2-web-mobile.vercel.app/livros.html',
