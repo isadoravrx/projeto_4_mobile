@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
   },
   categoria: {
     borderWidth: 1,
-    borderRadius: 4,
+    borderRadius: 2,
     borderColor: '#ccc',
     fontSize: 12,
     flexGrow: 1,
@@ -176,7 +176,6 @@ const styles = StyleSheet.create({
     height: 40,
     flexGrow: 1,
     flexBasis: 0,
-    backgroundColor: '#efefef',
     justifyContent: 'center'
   },
   header: {
@@ -187,7 +186,9 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     flexBasis: 0,
     color: '#999',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    textAlign: 'center',
+    alignItems: 'center',
   },
   title: {
     fontSize: 12

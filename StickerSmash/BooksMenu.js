@@ -24,7 +24,7 @@ const DATA = [
   { id: 'categoria', id2: 'O_Cortiço', title: 'Romance' },
   { id: 'ano', id2: 'O_Cortiço', title: '1890' },
   { id: 'titulo', id2: 'Os_Sertões', title: 'Os Sertões' },
-  { id: 'categoria', id2: 'Os_Sertões', title: 'romance-reportagem' },
+  { id: 'categoria', id2: 'Os_Sertões', title: 'Reportagem' },
   { id: 'ano', id2: 'Os_Sertões', title: '1902' },
   { id: 'titulo', id2: 'Senhora', title: 'Senhora' },
   { id: 'categoria', id2: 'Senhora', title: 'Romance' },
@@ -106,7 +106,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 4,
     borderColor: '#ccc',
-    minHeight: 50,
     fontSize: 12,
     flexGrow: 1,
     justifyContent: 'center',
@@ -132,7 +131,6 @@ const styles = StyleSheet.create({
     height: 40,
     flexGrow: 1,
     flexBasis: 0,
-    backgroundColor: '#eee',
     justifyContent: 'center'
   },
   title: {
