@@ -1,5 +1,7 @@
 import React from 'react';
+import { useState } from 'react';
 import { SafeAreaView, View, Text, StyleSheet, Image, TouchableOpacity, Linking, ScrollView } from 'react-native';
+import { Audio } from 'expo-av';
 
 const Livro = ({ route, navigation }) => {
   const { id2 } = route.params;
@@ -12,6 +14,7 @@ const Livro = ({ route, navigation }) => {
       autor: 'Clarice Lispector',
       preco: '124,90',
       link: 'https://proj2-web-mobile.vercel.app/livros.html',
+      audio : require('./audios/Alivros/A_hora_da_estrela.mp3'),
     },
     'Dom_Casmurro': {
       title: 'Dom Casmurro',
@@ -74,6 +77,26 @@ const Livro = ({ route, navigation }) => {
   const livro = livrosDetalhes[id2];
   navigation.setOptions({ title: livro.title });
 
+  const [sound, setSound] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handleAudioPlayPause = async () => {
+    if (!sound) {
+      const { sound } = await Audio.Sound.createAsync(livro.audio);
+      setSound(sound);
+      await sound.playAsync();
+      setIsPlaying(true);
+    } else {
+      if (isPlaying) {
+        await sound.pauseAsync();
+        setIsPlaying(false);
+      } else {
+        await sound.playAsync();
+        setIsPlaying(true);
+      }
+    }
+  };
+
   const openLink = () => {
     Linking.openURL(livro.link).catch(err => console.error('Erro ao abrir o URL:', err));
   };
@@ -90,6 +113,9 @@ const Livro = ({ route, navigation }) => {
         <TouchableOpacity style={styles.button} onPress={openLink}>
           <Text style={styles.buttonText}>Link para acesso</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.audiobutton} onPress={handleAudioPlayPause}>
+          <Text style={styles.buttonText}>{isPlaying ? 'Pausar Áudio' : 'Reproduzir Áudio'}</Text>
+      </TouchableOpacity>
       </View>
     </ScrollView>
   );
@@ -125,11 +151,21 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 24,
     borderRadius: 5,
+    marginBottom: 12,
+
+  },
+  audiobutton: {
+    backgroundColor: 'grey',
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 5,
+    marginBottom: 12,
+
   },
   buttonText: {
     color: '#fff',
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 16,  
   },
 });
 
