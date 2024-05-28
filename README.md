@@ -26,7 +26,7 @@ Nossos livros contam com uma imagem do livro, sua sinopse, seu autor(a), seu lin
 
 <img src="https://github.com/isadoravrx/projeto_4_mobile/blob/main/ScreenShots/DocHomeMOB.jpeg" alt="Print da Home dos Documentos" height="650px">
 
-Já na seção "Documentação", utilizamos o mesmo formato de "Livros, uma FlatList dividida por colunas, mostrando o tema e a categoria de cada documentação:<br/>
+Já na seção "Documentação", utilizamos o mesmo formato de "Livros", uma FlatList dividida por colunas, mostrando o tema e a categoria de cada documentação:<br/>
 
 <img src="https://github.com/isadoravrx/projeto_4_mobile/blob/main/ScreenShots/DocMOB.jpeg" alt="Print da Documentação" height="650px">
 
