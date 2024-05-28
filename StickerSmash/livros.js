@@ -22,7 +22,8 @@ const Livro = ({ route, navigation }) => {
       descricao: 'Em Dom Casmurro, o narrador Bento Santiago retoma a infância que passou na Rua de Matacavalos e conta a história do amor e das desventuras que viveu com Capitu, uma das personagens mais enigmáticas e intrigantes da literatura brasileira. Nas páginas deste romance, encontra-se a versão de um homem perturbado pelo ciúme, que revela aos poucos sua psicologia complexa e enreda o leitor em sua narrativa ambígua acerca do acontecimento ou não do adultério da mulher com olhos de ressaca, uma das maiores polêmicas da literatura brasileira.',
       autor: 'Machado de Assis',
       preco: '24,90',
-      link: 'https://proj2-web-mobile.vercel.app/livros.html',
+      link: 'https://proj2-web-mobile.vercel.app.html',
+      audio : require('./audios/Alivros/Dom_casmurro.mp3'),
     },
     'Macunaíma': {
       title: 'Macunaíma',
@@ -31,6 +32,7 @@ const Livro = ({ route, navigation }) => {
       autor: 'Mário de Andrade',
       preco: '38,00',
       link: 'https://proj2-web-mobile.vercel.app/livros.html',
+      audio : require('./audios/Alivros/Macunaima.mp3'),
     },
     'Menino_de_engenho': {
       title: 'Menino de Engenho',
@@ -39,6 +41,7 @@ const Livro = ({ route, navigation }) => {
       autor: 'José Lins do Rego',
       preco: '65,00',
       link: 'https://proj2-web-mobile.vercel.app/livros.html',
+      audio : require('./audios/Alivros/O_menino_de_engenho.mp3'),
     },
     'O_Cortiço': {
       title: 'O Cortiço',
@@ -47,6 +50,7 @@ const Livro = ({ route, navigation }) => {
       autor: 'Aluísio Azevedo',
       preco: '29,90',
       link: 'https://proj2-web-mobile.vercel.app/livros.html',
+      audio : require('./audios/Alivros/O_cortico.mp3'),
     },
     'Os_Sertões': {
       title: 'Os Sertões',
@@ -55,6 +59,7 @@ const Livro = ({ route, navigation }) => {
       autor: 'Euclides da Cunha',
       preco: '34,90',
       link: 'https://proj2-web-mobile.vercel.app/livros.html',
+      audio : require('./audios/Alivros/Os_sertoes.mp3'),
     },
     'Senhora': {
       title: 'Senhora',
@@ -63,6 +68,7 @@ const Livro = ({ route, navigation }) => {
       autor: 'José de Alencar',
       preco: '29,90',
       link: 'https://proj2-web-mobile.vercel.app/livros.html',
+      audio : require('./audios/Alivros/Senhora.mp3'),
     },
     'O_Cão_Sem_Plumas': {
       title: 'O Cão Sem Plumas',
@@ -71,6 +77,7 @@ const Livro = ({ route, navigation }) => {
       autor: 'João Cabral de Melo Neto',
       preco: '42,50',
       link: 'https://proj2-web-mobile.vercel.app/livros.html',
+      audio : require('./audios/Alivros/O_cao_sem_plumas.mp3'),
     },
   };
 
@@ -79,10 +86,9 @@ const Livro = ({ route, navigation }) => {
 
   const [sound, setSound] = useState();
 
-  async function playSound() {
+  async function playSound(audio) {
     console.log('Loading Sound');
-    const { sound } = await Audio.Sound.createAsync( require('./audios/Alivros/A_hora_da_estrela.mp3')
-    );
+    const { sound } = await Audio.Sound.createAsync(audio);
     setSound(sound);
 
     console.log('Playing Sound');
@@ -114,7 +120,7 @@ const Livro = ({ route, navigation }) => {
         <TouchableOpacity style={styles.button} onPress={openLink}>
           <Text style={styles.buttonText}>Link para acesso</Text>
         </TouchableOpacity>
-        <Button title="Play Sound" onPress={playSound} />
+        <Button title="Play Sound" onPress={() => playSound(livro.audio)} />
       </View>
     </ScrollView>
   );
