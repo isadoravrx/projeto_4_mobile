@@ -12,7 +12,7 @@ Esse projeto consiste em um aplicativo de compra de livros, que tem como seu pri
 
 Sua página inicial consta com uma logo no centro da tela, destacando nossa marca. Além da logo, também é exibida uma mensagem de boas-vindas e uma legenda que resume o que o usuário conseguirá fazer: <br/>
 
-<img src= "https://github.com/isadoravrx/projeto_4_mobile/blob/main/ScreenShots/DocHomeMOB.jpeg" alt= "Print da Home" height="650px">
+<img src= "https://github.com/isadoravrx/projeto_4_mobile/blob/main/ScreenShots/homeMOB.jpeg" alt= "Print da Home" height="650px">
 
 Para acessar as outras seções utilizamos a Prop "bottom-tab-navigator", criando uma barra de navegação na parte inferior da tela. <br/>
 
