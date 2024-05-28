@@ -1,6 +1,6 @@
 import React from 'react';
-import { useState } from 'react';
-import { SafeAreaView, View, Text, StyleSheet, Image, TouchableOpacity, Linking, ScrollView } from 'react-native';
+import { useEffect, useState } from 'react';
+import { SafeAreaView, View, Text, StyleSheet, Image, TouchableOpacity, Linking, ScrollView,Button } from 'react-native';
 import { Audio } from 'expo-av';
 
 const Livro = ({ route, navigation }) => {
@@ -77,25 +77,26 @@ const Livro = ({ route, navigation }) => {
   const livro = livrosDetalhes[id2];
   navigation.setOptions({ title: livro.title });
 
-  const [sound, setSound] = useState(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [sound, setSound] = useState();
 
-  const handleAudioPlayPause = async () => {
-    if (!sound) {
-      const { sound } = await Audio.Sound.createAsync(livro.audio);
-      setSound(sound);
-      await sound.playAsync();
-      setIsPlaying(true);
-    } else {
-      if (isPlaying) {
-        await sound.pauseAsync();
-        setIsPlaying(false);
-      } else {
-        await sound.playAsync();
-        setIsPlaying(true);
-      }
-    }
-  };
+  async function playSound() {
+    console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync( require('./audios/Alivros/A_hora_da_estrela.mp3')
+    );
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
 
   const openLink = () => {
     Linking.openURL(livro.link).catch(err => console.error('Erro ao abrir o URL:', err));
@@ -113,9 +114,7 @@ const Livro = ({ route, navigation }) => {
         <TouchableOpacity style={styles.button} onPress={openLink}>
           <Text style={styles.buttonText}>Link para acesso</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.audiobutton} onPress={handleAudioPlayPause}>
-          <Text style={styles.buttonText}>{isPlaying ? 'Pausar Áudio' : 'Reproduzir Áudio'}</Text>
-      </TouchableOpacity>
+        <Button title="Play Sound" onPress={playSound} />
       </View>
     </ScrollView>
   );
