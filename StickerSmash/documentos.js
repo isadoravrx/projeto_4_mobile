@@ -33,7 +33,7 @@ const Documento = ({ route, navigation }) => {
       image: require('./images/documentos/Arquitetura_em_Nuvem.jpeg'),
       descricao: 'A arquitetura de nuvem é a forma como as tecnologias individuais são integradas para criar nuvens. Elas são ambientes de TI que abstraem, agrupam e compartilham recursos escaláveis em uma rede. A arquitetura é como todos os componentes e recursos necessários no desenvolvimento de uma nuvem são conectados para construir uma plataforma online em que as aplicações serão executadas.',
       link: 'https://www.redhat.com/pt-br/topics/cloud-computing/what-is-cloud-architecture',
-      audio: require('./audios/Adocumentos/POO.mp3')
+      audio: require('./audios/Adocumentos/ARQ NUVEM.mp3')
     },
     'Autômatos_finitos':{
       title: 'Autômatos finitos',
@@ -122,6 +122,8 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 24,
     borderRadius: 5,
+    marginBottom: 12,
+
   },
   audiobutton: {
     backgroundColor: 'grey',
