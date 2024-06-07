@@ -6,7 +6,7 @@ Grupo:
 - Humberto Moraes <br/>
 - Iago Carvalho <br/>
 
-Esse projeto consiste em um aplicativo de compra de livros, que tem como seu principal objetivo criar uma experiência de usuário direta, onde ele consegue comprar um livro, ou acessar uma documentação, de forma rápida e fácil. (link do figma <a href = "https://www.figma.com/design/3hl1J8aWUN3aKG33rQEvXH/navega%C3%A7%C3%A3o-do-app?node-id=0-1&t=iiSlYDyx0OUBOXx0-1">LINK</a> ) <br/>
+Esse projeto consiste em um aplicativo de compra de livros, que tem como seu principal objetivo criar uma experiência de usuário direta, onde ele consegue comprar um livro, ou acessar uma documentação, de forma rápida e fácil. (Link do figma <a href = "https://www.figma.com/design/3hl1J8aWUN3aKG33rQEvXH/navega%C3%A7%C3%A3o-do-app?node-id=0-1&t=iiSlYDyx0OUBOXx0-1">Fluxograma de navegação do app</a> ) <br/>
 
 <img src= "https://github.com/isadoravrx/projeto_4_mobile/blob/main/ScreenShots/Fluxograma.jpeg" alt= "Print do Fluxograma" height="650px">
 
